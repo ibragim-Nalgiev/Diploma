@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'multiselectfield',
 
     'users',
+    'educational_modules',
+
 
 ]
 
