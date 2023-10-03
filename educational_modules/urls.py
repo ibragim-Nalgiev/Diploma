@@ -1,9 +1,10 @@
 from django.urls import path
 
+from .apps import EducationalModulesConfig
 from .views import ModulesCreateAPIView, ModulesListAPIView, ModulesRetrieveAPIView, ModulesUpdateAPIView, \
     ModulesDestroyAPIView, ModulesPublishedListAPIView
 
-app_name = 'educational_modules'
+app_name = EducationalModulesConfig.name
 
 urlpatterns = [
     path('create/', ModulesCreateAPIView.as_view(), name='modules_create'),
