@@ -7,10 +7,10 @@ from .views import ModulesCreateAPIView, ModulesListAPIView, ModulesRetrieveAPIV
 app_name = EducationalModulesConfig.name
 
 urlpatterns = [
-    path('create/', ModulesCreateAPIView.as_view(), name='modules_create'),
-    path('', ModulesPublishedListAPIView.as_view(), name='modules'),
-    path('all/', ModulesListAPIView.as_view(), name='modules'),
-    path('<int:pk>/', ModulesRetrieveAPIView.as_view(), name='module'),
-    path('update/<int:pk>/', ModulesUpdateAPIView.as_view(), name='modules_update'),
-    path('delete/<int:pk>/', ModulesDestroyAPIView.as_view(), name='modules_delete'),
+    path('create/', ModulesCreateAPIView.as_view(), name='educational_modules_create'),
+    path('', ModulesPublishedListAPIView.as_view(), name='educational_modules'),
+    path('all/', ModulesListAPIView.as_view(), name='educational_modules'),
+    path('<int:pk>/', ModulesRetrieveAPIView.as_view(), name='educational_module'),
+    path('update/<int:pk>/', ModulesUpdateAPIView.as_view(), name='educational_modules_update'),
+    path('delete/<int:pk>/', ModulesDestroyAPIView.as_view(), name='educational_modules_delete'),
 ]
