@@ -32,7 +32,7 @@ class ModulesTestCase(APITestCase):
 
         lala = {
             "title": "курсы по физической подготовке",
-            "description": "В здоровом теле - здоровй дух",
+            "description": "В здоровом теле - здоровый дух",
         }
 
         response = self.client.post('/categories/create/', data=lala)

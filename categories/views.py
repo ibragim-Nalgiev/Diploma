@@ -53,4 +53,3 @@ class CategoriesDestroyAPIView(generics.DestroyAPIView):
 
     def get_queryset(self):
         return Category.objects.all()
-

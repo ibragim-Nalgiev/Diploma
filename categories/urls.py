@@ -14,4 +14,3 @@ urlpatterns = [
     path('update/<int:pk>/', CategoriesUpdateAPIView.as_view(), name='modules_update'),
     path('delete/<int:pk>/', CategoriesDestroyAPIView.as_view(), name='modules_delete'),
 ]
-
