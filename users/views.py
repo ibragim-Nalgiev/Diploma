@@ -25,7 +25,7 @@ class UsersCreateAPIView(generics.CreateAPIView):
 
 
 class UserPublishedListAPIView(generics.ListAPIView):
-    """ Вывод списка пользователей для авторизованны пользователей с ограниченными данными"""
+    """ Вывод списка пользователей для авторизованных пользователей с ограниченными данными"""
 
     serializer_class = UserPublishedSerializer
     pagination_class = UserPagination

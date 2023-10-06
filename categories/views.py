@@ -1,5 +1,5 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from categories.models import Category
 from categories.pagination import CategoriesPagination
@@ -12,6 +12,7 @@ class CategoriesCreateAPIView(generics.CreateAPIView):
 
     serializer_class = CategoriesSerializer
     permission_classes = [IsAuthenticated & (IsModeratorPermission | IsTeacherPermission)]
+    # permission_classes = [AllowAny]
 
 
 class CategoriesListAPIView(generics.ListAPIView):
