@@ -13,6 +13,7 @@ class User(AbstractUser):
     ROLES_CHOICES = (
         ('moderator', 'moderator'),
         ('teacher', 'teacher'),
+        ('student', 'student'),
     )
 
     username = None
