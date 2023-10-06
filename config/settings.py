@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'users',
     'educational_modules',
     'categories',
+    'students',
 
 
 ]
