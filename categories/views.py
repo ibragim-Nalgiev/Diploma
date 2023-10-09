@@ -12,7 +12,7 @@ class CategoriesCreateAPIView(generics.CreateAPIView):
 
     serializer_class = CategoriesSerializer
     permission_classes = [IsAuthenticated & (IsModeratorPermission | IsTeacherPermission)]
-    # permission_classes = [AllowAny]
+
 
 
 class CategoriesListAPIView(generics.ListAPIView):

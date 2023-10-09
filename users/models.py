@@ -13,6 +13,7 @@ class User(AbstractUser):
     ROLES_CHOICES = (
         ('moderator', 'moderator'),
         ('teacher', 'teacher'),
+        ('student', 'student'),
     )
 
     username = None
@@ -23,7 +24,7 @@ class User(AbstractUser):
     country = models.CharField(max_length=235, verbose_name='страна', **NULLABLE)
     city = models.CharField(max_length=235, verbose_name='город', **NULLABLE)
     avatar = models.ImageField(upload_to='educational-modules/users/photo', verbose_name='аватар', **NULLABLE)
-    roles = MultiSelectField(choices=ROLES_CHOICES, verbose_name='роль пользователя', max_length=23, **NULLABLE)
+    roles = MultiSelectField(choices=ROLES_CHOICES, verbose_name='роль пользователя', max_length=30, **NULLABLE)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

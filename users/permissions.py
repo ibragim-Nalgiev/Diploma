@@ -14,3 +14,11 @@ class IsTeacherPermission(BasePermission):
         if "teacher" in request.user.roles:
             return True
         return False
+
+
+class IsStudentPermission(BasePermission):
+    def has_permission(self, request, view):
+
+        if "student" in request.user.roles:
+            return True
+        return False

@@ -13,7 +13,7 @@ class Command(BaseCommand):
             is_staff=True,
             is_superuser=True,
             is_active=True,
-            roles=['moderator', 'teacher']
+            roles=['moderator', 'teacher', 'student']
         )
 
         user.set_password('12345678')

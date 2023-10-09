@@ -1,5 +1,5 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Modules
 from .pagination import ModulesPagination
@@ -12,7 +12,7 @@ class ModulesCreateAPIView(generics.CreateAPIView):
 
     serializer_class = ModulesSerializer
     permission_classes = [IsAuthenticated & (IsModeratorPermission | IsTeacherPermission)]
-    # permission_classes = [AllowAny]
+
 
 
 class ModulesPublishedListAPIView(generics.ListAPIView):
