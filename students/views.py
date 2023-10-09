@@ -20,7 +20,7 @@ class StudentPublishedListAPIView(generics.ListAPIView):
 
     serializer_class = StudentSmallSerializer
     pagination_class = StudentPagination
-    permission_classes = [IsTeacherPermission & (IsModeratorPermission | IsStudentPermission)]
+    permission_classes = [IsAuthenticated & (IsTeacherPermission | IsModeratorPermission | IsStudentPermission)]
 
     def get_queryset(self):
         return Student.objects.all()
@@ -31,7 +31,7 @@ class StudentListAPIView(generics.ListAPIView):
 
     serializer_class = StudentSerializer
     pagination_class = StudentPagination
-    permission_classes = IsModeratorPermission
+    permission_classes = (IsModeratorPermission, )
 
     def get_queryset(self):
         return Student.objects.all()
@@ -53,10 +53,10 @@ class StudentUpdateAPIView(generics.UpdateAPIView):
     """ Обновление данных о студенте"""
 
     serializer_class = StudentSerializer
-    permission_classes = IsModeratorPermission
+    permission_classes = [IsAuthenticated & IsModeratorPermission]
 
     def get_queryset(self):
-        return Student.objects.all()
+        return Student.objects.all().order_by('first_name', 'last_name')
 
 
 class StudentDestroyAPIView(generics.DestroyAPIView):

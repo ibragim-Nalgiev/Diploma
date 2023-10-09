@@ -17,6 +17,7 @@ class Student(models.Model):
     class Meta:
         verbose_name = 'студент'
         verbose_name_plural = 'студенты'
+        ordering = ['first_name', "last_name"]
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
